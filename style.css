@@ -1,206 +1,343 @@
-/* إشراق - Main Style */
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Tajawal", sans-serif;
 }
 
-body {
-    background: #050505;
-    color: #fff;
-    overflow-x: hidden;
+:root {
+    --bg: #05070d;
+    --card: rgba(255,255,255,0.06);
+    --navy: #0b1f3a;
+    --gold: #d4af37;
+    --text: #ffffff;
+    --gray: #b8b8b8;
 }
 
 html {
     scroll-behavior: smooth;
 }
 
-/* الألوان */
-:root {
-    --main: #0b1f3a;
-    --gold: #d4af37;
-    --dark: #050505;
-    --light: #f5f5f5;
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Tajawal", sans-serif;
+    overflow-x: hidden;
 }
 
-/* الحاوية */
 .container {
     width: 90%;
     max-width: 1200px;
     margin: auto;
 }
 
-/* الهيدر */
+
+/* Header */
+
 header {
     position: fixed;
-    top: 0;
     width: 100%;
-    z-index: 1000;
-    padding: 20px 0;
-    background: rgba(5,5,5,0.7);
-    backdrop-filter: blur(15px);
+    top:0;
+    z-index:100;
+    padding:20px 0;
+    background:rgba(5,7,13,0.65);
+    backdrop-filter:blur(15px);
 }
+
 
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
+
 
 .logo {
-    font-size: 32px;
-    font-weight: 800;
-    color: var(--gold);
+    font-size:34px;
+    font-weight:800;
+    color:var(--gold);
 }
+
 
 nav ul {
-    display: flex;
-    gap: 30px;
-    list-style: none;
+    display:flex;
+    gap:35px;
+    list-style:none;
 }
 
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    transition: .3s;
-}
 
-nav ul li a:hover {
-    color: var(--gold);
-}
-
-/* Hero */
-.hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    position: relative;
-    background:
-    linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.9)),
-    url("assets/images/hero.jpg");
-    background-size: cover;
-    background-position: center;
-}
-
-.hero-content {
-    max-width: 700px;
-}
-
-.hero h1 {
-    font-size: 65px;
-    line-height: 1.2;
-}
-
-.hero h1 span {
-    color: var(--gold);
-}
-
-.hero p {
-    margin: 25px 0;
-    font-size: 20px;
-    color: #ccc;
-}
-
-.btn {
-    display: inline-block;
-    padding: 15px 35px;
-    background: var(--gold);
-    color: #000;
-    border-radius: 40px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: .3s;
-}
-
-.btn:hover {
-    transform: translateY(-5px);
-}
-
-/* الأقسام */
-section {
-    padding: 100px 0;
-}
-
-.section-title {
-    text-align: center;
-    font-size: 40px;
-    margin-bottom: 50px;
-}
-
-.section-title span {
-    color: var(--gold);
-}
-
-/* الخدمات */
-.services {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-    gap: 30px;
-}
-
-.card {
-    background: rgba(255,255,255,.05);
-    padding: 35px;
-    border-radius: 20px;
-    border: 1px solid rgba(255,255,255,.1);
-    transition: .3s;
-}
-
-.card:hover {
-    transform: translateY(-10px);
-    border-color: var(--gold);
-}
-
-.card h3 {
-    color: var(--gold);
-    margin-bottom: 15px;
-}
-
-/* معرض الأعمال */
-.gallery {
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
-}
-
-.gallery img {
-    width:100%;
-    border-radius:20px;
+nav a {
+    color:white;
+    text-decoration:none;
     transition:.3s;
 }
 
-.gallery img:hover {
-    transform:scale(1.05);
+
+nav a:hover {
+    color:var(--gold);
 }
 
-/* التواصل */
-.contact {
-    text-align:center;
+
+
+/* Hero */
+
+.hero {
+
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    position:relative;
+
+    background:
+    radial-gradient(circle at top right,#14294d,transparent 40%),
+    radial-gradient(circle at bottom left,#0b1f3a,transparent 40%),
+    var(--bg);
+
 }
+
+
+.hero-content {
+
+    max-width:750px;
+    animation:fadeUp 1s ease;
+
+}
+
+
+.hero h1 {
+
+    font-size:70px;
+    line-height:1.2;
+
+}
+
+
+.hero h1 span {
+
+    display:block;
+    color:var(--gold);
+
+}
+
+
+.hero p {
+
+    color:var(--gray);
+    font-size:21px;
+    line-height:1.8;
+    margin:25px 0;
+
+}
+
+
+
+.btn {
+
+    display:inline-block;
+    padding:15px 40px;
+    border-radius:50px;
+    background:var(--gold);
+    color:#000;
+    text-decoration:none;
+    font-weight:700;
+    transition:.4s;
+
+}
+
+
+.btn:hover {
+
+    transform:translateY(-6px);
+    box-shadow:0 15px 35px rgba(212,175,55,.25);
+
+}
+
+
+
+
+/* Sections */
+
+section {
+
+    padding:100px 0;
+
+}
+
+
+.section-title {
+
+    text-align:center;
+    font-size:42px;
+    margin-bottom:50px;
+
+}
+
+
+.section-title span {
+
+    color:var(--gold);
+
+}
+
+
+
+/* Services */
+
+.services {
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+
+}
+
+
+
+.card {
+
+    background:var(--card);
+    border:1px solid rgba(255,255,255,.08);
+    padding:35px;
+    border-radius:25px;
+    backdrop-filter:blur(15px);
+    transition:.4s;
+
+}
+
+
+
+.card:hover {
+
+    transform:translateY(-12px);
+    border-color:var(--gold);
+
+}
+
+
+
+.card h3 {
+
+    color:var(--gold);
+    margin-bottom:15px;
+    font-size:24px;
+
+}
+
+
+
+.card p {
+
+    color:var(--gray);
+    line-height:1.8;
+
+}
+
+
+
+/* Gallery */
+
+.gallery {
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+
+}
+
+
+
+.gallery img {
+
+    width:100%;
+    border-radius:25px;
+    transition:.4s;
+
+}
+
+
+
+.gallery img:hover {
+
+    transform:scale(1.05);
+
+}
+
+
+
+/* Contact */
+
+.contact p {
+
+    color:var(--gray);
+    font-size:20px;
+
+}
+
+
+
 
 footer {
-    padding:30px;
+
     text-align:center;
-    background:#000;
-    color:#aaa;
+    padding:30px;
+    background:#020307;
+    color:#777;
+
 }
 
 
-/* الجوال */
+
+
+@keyframes fadeUp {
+
+from {
+
+opacity:0;
+transform:translateY(40px);
+
+}
+
+to {
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+
+
+/* Mobile */
+
 @media(max-width:768px){
 
-.hero h1{
-    font-size:42px;
+
+.hero h1 {
+
+font-size:45px;
+
 }
 
-nav ul{
-    display:none;
+
+.hero p {
+
+font-size:18px;
+
 }
 
-.section-title{
-    font-size:32px;
+
+nav ul {
+
+display:none;
+
 }
+
+
+.section-title {
+
+font-size:32px;
+
+}
+
 
 }
