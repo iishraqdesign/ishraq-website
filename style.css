@@ -348,3 +348,17 @@ font-size:32px;
     font-size:45px;
     margin-bottom:20px;
 }
+.service-head {
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin-bottom:20px;
+}
+
+.icon {
+    font-size:35px;
+}
+
+.service-head h3 {
+    margin:0;
+}
