@@ -53,22 +53,28 @@ nav a{
 }
 
 .hero{
+    min-height:100vh;
 
-    min-height:85vh;
+    background:
+    linear-gradient(rgba(9,9,11,.65),rgba(9,9,11,.75)),
+    url("assets/images/hero-background.png");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
 
     display:flex;
-
     flex-direction:column;
-
     justify-content:center;
-
     align-items:center;
-
     text-align:center;
 
     padding:20px;
-
 }
+
+    
+
+
 
 .hero h1{
 
@@ -128,4 +134,32 @@ nav a{
 
     text-decoration:none;
 
+}
+.primary,
+.secondary{
+    transition:0.3s ease;
+}
+
+.primary:hover{
+    transform:translateY(-4px);
+    box-shadow:0 10px 30px rgba(212,175,55,.35);
+}
+
+.secondary:hover{
+    background:#D4AF37;
+    color:#09090B;
+    transform:translateY(-4px);
+}
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+
+    background:rgba(9,9,11,.55);
+
+    backdrop-filter:blur(14px);
+
+    padding:20px 8%;
 }
